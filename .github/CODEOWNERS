@@ -1,0 +1,15 @@
+# Security engineer must review all changes
+* @itbishowp
+
+# Security engineer must review all CI/CD changes
+.github/ @itbishowp
+
+# Security engineer must review all infrastructure changes
+infrastructure/ @itbishowp
+
+# Security engineer must review all auth package changes
+packages/auth/ @itbishowp
+
+# Security engineer must review Docker configs
+docker-compose.yml @itbishowp
+**/Dockerfile @itbishowp
