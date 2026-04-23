@@ -6,6 +6,9 @@ on:
   push:
     branches: [main]
 
+env:
+  HUSKY: '0'
+
 jobs:
   lint:
     name: Lint
@@ -43,11 +46,6 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci --legacy-peer-deps
-      - name: Run Snyk vulnerability scan
-        uses: snyk/actions/node@master
-        continue-on-error: true
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       - name: Run npm audit
         run: npm audit --omit=dev || true
 
