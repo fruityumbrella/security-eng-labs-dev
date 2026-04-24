@@ -37,7 +37,8 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci --legacy-peer-deps
-      - run: npx jest --passWithNoTests --coverage
+      - run: ./node_modules/.bin/jest --passWithNoTests --coverage
+
 
   security:
     name: Security Scan
