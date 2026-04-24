@@ -20,7 +20,11 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci --legacy-peer-deps
-      - run: npx eslint apps/api/src/**/*.ts
+      - name: Lint API
+        run: npx eslint apps/api/src/ --ext .ts
+      - name: Lint Web
+        working-directory: apps/web
+        run: npx next lint
 
   test:
     name: Test
