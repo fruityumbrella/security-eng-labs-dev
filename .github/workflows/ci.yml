@@ -21,7 +21,8 @@ jobs:
           cache: 'npm'
       - run: npm ci --legacy-peer-deps
       - name: Lint API
-        run: npx eslint apps/api/src/ --ext .ts
+        working-directory: apps/api
+        run: npx eslint src/ --ext .ts
       - name: Lint Web
         working-directory: apps/web
         run: npx next lint
